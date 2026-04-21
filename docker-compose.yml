@@ -1,0 +1,68 @@
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: drone_db
+    environment:
+      POSTGRES_DB: ${DB_NAME:-droneapp}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+    volumes:
+      - drone_db_data:/var/lib/postgresql/data
+      - ./db/init-spatial.sql:/docker-entrypoint-initdb.d/init-spatial.sql
+    networks:
+      - droneapp-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres} -d ${DB_NAME:-droneapp}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    container_name: drone_backend
+    volumes:
+      - ./backend:/app/backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - droneapp-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/api/v1/health/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: drone_frontend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    env_file:
+      - ./frontend/.env
+    ports:
+      - "5173:5173"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - droneapp-network
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z localhost 5173 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+networks:
+  droneapp-network:
+    driver: bridge
+
+volumes:
+  drone_db_data:

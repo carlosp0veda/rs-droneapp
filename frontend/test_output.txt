@@ -1,0 +1,46 @@
+
+ RUN  v4.1.4 /Users/cpoveda/droneapp/frontend
+
+stderr | src/components/MapView/MapView.test.tsx
+Mapbox token is missing. Map components will not render correctly.
+
+ ❯ src/components/MapView/MapView.test.tsx (1 test | 1 failed) 21ms
+     × renders all markers for given locations 18ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/MapView/MapView.test.tsx > MapView > renders all markers for given locations
+Error: [vitest] No "default" export is defined on the "react-map-gl/mapbox" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+vi.mock(import("react-map-gl/mapbox"), async (importOriginal) => {
+  const actual = await importOriginal()
+  return {
+    ...actual,
+    // your mocked methods
+  }
+})
+
+ ❯ MapView src/components/MapView/MapView.tsx:24:8
+     22|   return (
+     23|     <div style={{ width: '100%', height: '100%', borderRadius: 'var(--…
+     24|       <Map
+       |        ^
+     25|         initialViewState={{
+     26|           longitude: -74.006,
+ ❯ Object.react_stack_bottom_frame node_modules/.pnpm/react-dom@19.2.5_react@19.2.5/node_modules/react-dom/cjs/react-dom-client.development.js:25904:20
+ ❯ renderWithHooks node_modules/.pnpm/react-dom@19.2.5_react@19.2.5/node_modules/react-dom/cjs/react-dom-client.development.js:7662:22
+ ❯ updateFunctionComponent node_modules/.pnpm/react-dom@19.2.5_react@19.2.5/node_modules/react-dom/cjs/react-dom-client.development.js:10166:19
+ ❯ beginWork node_modules/.pnpm/react-dom@19.2.5_react@19.2.5/node_modules/react-dom/cjs/react-dom-client.development.js:11778:18
+ ❯ runWithFiberInDEV node_modules/.pnpm/react-dom@19.2.5_react@19.2.5/node_modules/react-dom/cjs/react-dom-client.development.js:874:13
+ ❯ performUnitOfWork node_modules/.pnpm/react-dom@19.2.5_react@19.2.5/node_modules/react-dom/cjs/react-dom-client.development.js:17641:22
+ ❯ workLoopSync node_modules/.pnpm/react-dom@19.2.5_react@19.2.5/node_modules/react-dom/cjs/react-dom-client.development.js:17469:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  22:12:47
+   Duration  2.03s (transform 277ms, setup 263ms, import 498ms, tests 21ms, environment 867ms)
+

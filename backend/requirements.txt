@@ -1,0 +1,10 @@
+django>=5.0.0
+djangorestframework
+google-adk
+psycopg2-binary
+django-cors-headers
+python-dotenv
+djangorestframework-gis
+pydantic
+pytest-asyncio
+gunicorn
