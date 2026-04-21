@@ -1,50 +1,49 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report: Constitution Update
+- Version change: [TEMPLATE] -> v1.0.0
+- List of modified principles:
+  - PRINCIPLE_1: [NONE] -> Agentic-First Development
+  - PRINCIPLE_2: [NONE] -> Clean Code & High Modularity
+  - PRINCIPLE_3: [NONE] -> Automated Testing & Verification
+  - PRINCIPLE_4: [NONE] -> Radical UX Consistency
+  - PRINCIPLE_5: [NONE] -> Performance-Driven Engineering
+- Added sections: Performance Standards
+- Templates requiring updates: 
+  - .specify/templates/plan-template.md (⚠ pending verification)
+  - .specify/templates/spec-template.md (⚠ pending verification)
+  - .specify/templates/tasks-template.md (⚠ pending verification)
+- Follow-up TODOs: None
+-->
+
+# DroneApp Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Agentic-First Development
+Autonomous agents drive the tactical execution of this project. Human stakeholders provide strategic direction, architectural guardrails, and final approval. Code must be structured to be highly readable by both humans and LLMs (modular, well-documented, standardized). Tactical decisions are delegated to agents, while strategic intent remains with humans.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Clean Code & High Modularity
+Code quality is non-negotiable. We adhere to SOLID principles and maintain high modularity. Functions must be focused, and complex logic must be abstracted into well-defined modules. Mandatory documentation for all public APIs and export points ensures maintainability in an automated development environment. Agentic-generated code must pass linting and complexity checks.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Automated Testing & Verification
+100% test coverage for core business logic. Every feature, bug fix, or refactor MUST be accompanied by automated unit and integration tests. Agents MUST verify changes against the test suite before submitting proposals. Test-Driven Development (TDD) is the baseline standard for ensuring reliability in an autonomous workflow.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Radical UX Consistency
+User experience must be consistent and premium across all touchpoints. All UI work must utilize the project's Design System tokens and shared components. Accessibility (WCAG standards) is a requirement, not an afterthought. Interfaces should feel "alive" and responsive, following modern design aesthetics.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Performance-Driven Engineering
+Performance is a first-class citizen. We prioritize fast response times, minimal bundle sizes, and efficient resource usage. Expensive operations must be optimized or deferred to background processing. Performance metrics (LCP, TTI, and backend latency) serve as quality gates for all production deployments.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Performance Standards
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Baseline Metrics
+- **Frontend**: All features must aim for sub-2s Time to Interactive (TTI) and 0.1s Cumulative Layout Shift (CLS).
+- **Backend**: Core API endpoints must maintain P99 latency under 200ms.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Resource Efficiency
+Memory usage and CPU cycles must be monitored during development. Agent-generated code that introduces significant performance regressions will be rejected during verification phases.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+The Constitution is the supreme authority on development practices within DroneApp. Amendments require a formal specification, version bump, and multi-agent/human consensus. Use this document as the source of truth for all engineering decisions.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-04-20 | **Last Amended**: 2026-04-20

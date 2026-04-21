@@ -28,7 +28,7 @@
 
 ## [Category 2]
 
-- [ ] CHK004 Another category item
+- [ ] CHK002 Another category item
 - [ ] CHK005 Item with specific criteria
 - [ ] CHK006 Final item in this category
 

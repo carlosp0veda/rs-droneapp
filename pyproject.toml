@@ -1,0 +1,40 @@
+[project]
+name = "droneapp"
+version = "0.1.0"
+description = "Professional drone delivery management application"
+requires-python = ">=3.10"
+dependencies = [
+    "django>=4.2.0",
+    "djangorestframework",
+    "google-adk",
+    "psycopg2-binary",
+    "django-cors-headers",
+    "python-dotenv",
+    "djangorestframework-gis",
+    "pydantic",
+    "pytest-asyncio",
+    "gunicorn",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["backend"]
+
+[tool.black]
+line-length = 88
+target-version = ['py313']
+include = '\.pyi?$'
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "B"]
+ignore = []
+
+[tool.ruff.lint.isort]
+combine-as-imports = true

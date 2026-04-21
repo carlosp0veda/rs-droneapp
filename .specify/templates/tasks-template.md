@@ -62,7 +62,7 @@ description: "Task list template for feature implementation"
 
 Examples of foundational tasks (adjust based on your project):
 
-- [ ] T004 Setup database schema and migrations framework
+- [ ] T002 Setup database schema and migrations framework
 - [ ] T005 [P] Implement authentication/authorization framework
 - [ ] T006 [P] Setup API routing and middleware structure
 - [ ] T007 Create base models/entities that all stories depend on
@@ -150,11 +150,11 @@ Examples of foundational tasks (adjust based on your project):
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] TXXX [P] Documentation updates in docs/
-- [ ] TXXX Code cleanup and refactoring
-- [ ] TXXX Performance optimization across all stories
-- [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
-- [ ] TXXX Security hardening
+- [ ] TXXX [P] Documentation updates in docs/ (ensuring Agent-readability)
+- [ ] TXXX Code cleanup and refactoring (SOLID/DRY check)
+- [ ] TXXX Performance optimization across all stories (TTI/Latency verification)
+- [ ] TXXX [P] Additional unit tests (ensuring 100% coverage for core logic)
+- [ ] TXXX UX Consistency & Accessibility Audit (WCAG compliance)
 - [ ] TXXX Run quickstart.md validation
 
 ---

@@ -31,7 +31,11 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **Principle I: Agentic-First**: Is the design agent-friendly? (Modular, documented)
+- [ ] **Principle II: Clean Code**: Does the plan ensure SOLID/DRY adherence?
+- [ ] **Principle III: Automated Testing**: Is 100% test coverage planned for core logic?
+- [ ] **Principle IV: UX Consistency**: Does it follow the Design System and WCAG?
+- [ ] **Principle V: Performance**: Are performance metrics and constraints defined?
 
 ## Project Structure
 

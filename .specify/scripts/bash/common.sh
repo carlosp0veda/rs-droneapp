@@ -114,7 +114,7 @@ has_git() {
     git -C "$repo_root" rev-parse --is-inside-work-tree >/dev/null 2>&1
 }
 
-# Strip a single optional path segment (e.g. gitflow "feat/004-name" -> "004-name").
+# Strip a single optional path segment (e.g. gitflow "feat/002-name" -> "002-name").
 # Only when the full name is exactly two slash-free segments; otherwise returns the raw name.
 spec_kit_effective_branch_name() {
     local raw="$1"
@@ -154,14 +154,14 @@ check_feature_branch() {
 }
 
 # Find feature directory by numeric prefix instead of exact branch match
-# This allows multiple branches to work on the same spec (e.g., 004-fix-bug, 004-add-feature)
+# This allows multiple branches to work on the same spec (e.g., 002-fix-bug, 002-add-feature)
 find_feature_dir_by_prefix() {
     local repo_root="$1"
     local branch_name
     branch_name=$(spec_kit_effective_branch_name "$2")
     local specs_dir="$repo_root/specs"
 
-    # Extract prefix from branch (e.g., "004" from "004-whatever" or "20260319-143022" from timestamp branches)
+    # Extract prefix from branch (e.g., "002" from "002-whatever" or "20260319-143022" from timestamp branches)
     local prefix=""
     if [[ "$branch_name" =~ ^([0-9]{8}-[0-9]{6})- ]]; then
         prefix="${BASH_REMATCH[1]}"
